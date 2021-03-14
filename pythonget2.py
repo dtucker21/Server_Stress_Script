@@ -5,7 +5,7 @@ import json
 from random import seed
 from random import random
 seed()
-userlist=['demo','ptucker@whitworth.edu','n2x-demo','arc-test','coast-test']
+userlist=['username1','username2','username3','username4','username5']
 test_start=time.ctime()
 timer_s=time.perf_counter()
 
@@ -43,30 +43,30 @@ class stressthread(thr.Thread):
         count=0
         urlint=0
         while count<=100:
-            url='https://www.textmuse.com/zivoz/demo/demo_priority.php?u='
+            url='https://www.webpage.com/login?u='
             #print(f'{self.name} REQUEST #{count}')
             f.write(f'REQUEST #{count+1}\n')
             urlint=int(random()*10%5)
             if urlint==1:
                 url=url+userlist[1]
-                #print('USER: PTUCKER@WHITWORTH.EDU')
-                f.write('USER: PTUCKER@WHITWORTH.EDU\n')
+                #print('USER: USERNAME2')
+                f.write('USER: USERNAME2\n')
             elif urlint==2:
                 url=url+userlist[2]
-                #print('USER: N2X-DEMO')
-                f.write('USER: N2X-DEMO\n')
+                #print('USER: USERNAME3')
+                f.write('USER: USERNAME3\n')
             elif urlint==3:
                 url=url+userlist[3]
-                #print('USER: ARC-TEST')
-                f.write('USER: ARC-TEST\n')
+                #print('USER: USERNAME4')
+                f.write('USER: USERNAME4\n')
             elif urlint==4:
                 url=url+userlist[4]
-                #print('USER: COAST-TEST')
-                f.write('USER: COAST-TEST\n')
+                #print('USER: USERNAME5')
+                f.write('USER: USERNAME5\n')
             else:
                 url=url+userlist[0]
-                #print('USER: DEMO')
-                f.write('USER: DEMO\n')
+                #print('USER: USERNAME1')
+                f.write('USER: USERNAME1\n')
             starttime=time.perf_counter()
             r=req.get(url)
             endtime=time.perf_counter()
